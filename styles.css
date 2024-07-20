@@ -607,6 +607,32 @@ header {
     white-space: nowrap;
     font-family: "Poppins", sans-serif;
 }
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+    .btn-shine {
+        font-size: 1.5rem; /* Ajusta o tamanho da fonte para telas menores */
+        padding: 8px 24px; /* Ajusta o padding para não ocupar muito espaço */
+        white-space: normal; /* Permite quebra de linha no texto */
+    }
+}
+
+/* Estilos para telas médias */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .btn-shine {
+        font-size: 1.25rem; /* Ajusta o tamanho da fonte para telas médias */
+        padding: 10px 28px; /* Ajusta o padding para telas médias */
+        white-space: normal; /* Permite quebra de linha no texto */
+    }
+}
+
+/* Estilos para telas maiores */
+@media (min-width: 1025px) {
+    .btn-shine {
+        font-size: 1.5rem; /* Tamanho da fonte para telas maiores */
+        padding: 8px 24px; /* Padding para telas maiores */
+        white-space: nowrap; /* Não permite quebra de linha no texto */
+    }
+}
 
 /* Animação do brilho */
 @-moz-keyframes shine {
