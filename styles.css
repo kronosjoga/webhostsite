@@ -297,59 +297,23 @@ body {
     }
 
     .navbar .dropdown .dropdown-content {
-        position: static;
-        width: 100%;
-        max-width: none;
-        margin-top: 0;
-        transform: none;
+        position: static; /* Faz com que o dropdown seja exibido como um bloco normal */
+        width: 100%; /* Largura completa do menu */
+        max-width: none; /* Remove a largura máxima */
+        margin-top: 0; /* Remove a margem superior */
+        transform: none; /* Remove o ajuste de transformação */
     }
 
+    /* Estilos adicionais para garantir que os containers de preços se ajustem */
     .card {
-        width: 100%;
-        height: auto;
-        box-sizing: border-box;
-    }
-}
-
-/* Estilos para telas médias */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .container {
-        width: 90%;
-        padding: 1rem;
-    }
-
-    .navbar .nav-links {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        background-color: transparent;
-        width: auto;
-        padding: 0;
-        box-shadow: none;
-    }
-
-    .navbar .hamburger {
-        display: none;
-    }
-
-    .navbar .dropdown .dropdown-content {
-        position: absolute;
-        width: auto;
-        max-width: 200px;
-        margin-top: 0;
-        transform: none;
-    }
-
-    .card {
-        width: 48%; /* Ajusta a largura dos cartões para 48% para que dois cartões caibam lado a lado */
-        margin: 1%; /* Adiciona margem para espaçamento */
-        height: auto;
-        box-sizing: border-box;
+        width: 100%; /* Ajusta a largura dos cartões para 100% da tela */
+        height: auto; /* Ajusta a altura automaticamente */
+        box-sizing: border-box; /* Inclui bordas e padding no cálculo da largura e altura */
     }
 }
 
 /* Estilos para telas maiores */
-@media (min-width: 1025px) {
+@media (min-width: 769px) {
     .container {
         width: 90%;
         padding: 1rem;
@@ -414,10 +378,10 @@ header {
     align-items: center; /* Alinha verticalmente o texto e a imagem */
     justify-content: center; /* Centraliza horizontalmente o conteúdo dentro do container */
     gap: 20px; /* Espaçamento entre o texto e a imagem */
-    padding: 5rem; /* Adiciona um pouco de espaçamento ao redor do container */
+    padding: 2rem; /* Adiciona um pouco de espaçamento ao redor do container */
     min-height: 100vh; /* Garante que o container ocupe a altura total da viewport */
-    flex-direction: row; /* Alinha o conteúdo na horizontal */
-    text-align: left; /* Ajusta o alinhamento do texto para a esquerda */
+    flex-direction: column; /* Alinha o conteúdo na vertical */
+    text-align: center; /* Alinha o texto ao centro */
     margin-top: 1px; /* Garante que o container esteja bem abaixo da navbar */
     position: relative; /* Garante que os filhos se posicionem em relação a este container */
 }
@@ -425,6 +389,8 @@ header {
 .header-text {
     max-width: 50%; /* Limita a largura máxima do texto para melhor visualização */
     z-index: 1; /* Garante que o texto fique acima da imagem */
+    padding-top: 50px; /* Adiciona espaço acima do texto para centralizar verticalmente */
+    padding-bottom: 50px; /* Adiciona espaço abaixo do texto para centralizar verticalmente */
 }
 
 .header-text h1 {
@@ -467,10 +433,12 @@ header {
         max-width: 100%; /* A largura máxima do texto ocupa 100% da tela */
         margin-bottom: 1rem; /* Adiciona um espaço abaixo do texto */
         z-index: 1; /* Garante que o texto fique acima da imagem */
+        padding-top: 0; /* Remove o espaço acima do texto */
+        padding-bottom: 0; /* Remove o espaço abaixo do texto */
     }
 
-    .header-image {
-        width: auto; /* Ajusta a largura da imagem para 100% da tela */
+    .header-image img {
+        width: 100%; /* Ajusta a largura da imagem para 100% da tela */
         height: auto; /* Ajusta a altura da imagem automaticamente */
         z-index: 0; /* Garante que a imagem fique atrás do texto */
     }
@@ -482,7 +450,76 @@ header {
     .header-text h2 {
         font-size: 1rem; /* Ajusta o tamanho do subtítulo para telas menores */
     }
+
+    .btn-shine {
+        font-size: 1.25rem; /* Ajusta o tamanho da fonte para telas menores */
+        padding: 10px 20px; /* Ajusta o padding para telas menores */
+        white-space: normal; /* Permite quebra de linha no texto */
+    }
 }
+
+/* Ajustes para telas médias */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header-container {
+        flex-direction: column; /* Muda a direção para coluna em telas médias */
+        align-items: center; /* Centraliza o conteúdo horizontalmente */
+        text-align: center; /* Alinha o texto ao centro */
+    }
+
+    .header-text {
+        max-width: 90%; /* Ajusta a largura máxima do texto para telas médias */
+        margin-bottom: 1rem; /* Adiciona um espaço abaixo do texto */
+        padding-top: 50px; /* Adiciona espaço acima do texto para centralizar verticalmente */
+        padding-bottom: 50px; /* Adiciona espaço abaixo do texto para centralizar verticalmente */
+    }
+
+    .header-image {
+        position: relative; /* Necessário para o uso de transform */
+    }
+
+    .header-image img {
+        width: 90%; /* Ajusta a largura da imagem para telas médias */
+        height: auto; /* Ajusta a altura da imagem automaticamente */
+        z-index: 0; /* Garante que a imagem fique atrás do texto */
+        transform: translateY(-20px); /* Move a imagem 20px para cima */
+    }
+
+    .btn-shine {
+        font-size: 1.25rem; /* Ajusta o tamanho da fonte para telas médias */
+        padding: 10px 28px; /* Ajusta o padding para telas médias */
+        white-space: normal; /* Permite quebra de linha no texto */
+    }
+}
+
+/* Ajustes para telas maiores */
+@media (min-width: 1025px) {
+    .header-container {
+        flex-direction: row; /* Muda a direção para linha em telas maiores */
+        align-items: center; /* Alinha o conteúdo ao centro verticalmente */
+        text-align: center; /* Alinha o texto ao centro */
+    }
+
+    .header-text {
+        max-width: 50%; /* Ajusta a largura máxima do texto para telas maiores */
+        margin-right: 2rem; /* Adiciona um espaço à direita do texto */
+        padding-top: 0; /* Remove o espaço acima do texto */
+        padding-bottom: 0; /* Remove o espaço abaixo do texto */
+    }
+
+    .header-image img {
+        width: 310px; /* Ajusta a largura da imagem para telas maiores */
+        height: auto; /* Ajusta a altura da imagem automaticamente */
+        z-index: 0; /* Garante que a imagem fique atrás do texto */
+        transform: none; /* Remove qualquer transformação aplicada */
+    }
+
+    .btn-shine {
+        font-size: 1.5rem; /* Tamanho da fonte para telas maiores */
+        padding: 8px 24px; /* Padding para telas maiores */
+        white-space: nowrap; /* Não permite quebra de linha no texto */
+    }
+}
+
 
 
 /* Estilo para o contêiner de cartões */
@@ -607,32 +644,6 @@ header {
     white-space: nowrap;
     font-family: "Poppins", sans-serif;
 }
-/* Estilos para telas menores */
-@media (max-width: 768px) {
-    .btn-shine {
-        font-size: 1.5rem; /* Ajusta o tamanho da fonte para telas menores */
-        padding: 8px 24px; /* Ajusta o padding para não ocupar muito espaço */
-        white-space: normal; /* Permite quebra de linha no texto */
-    }
-}
-
-/* Estilos para telas médias */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .btn-shine {
-        font-size: 1.25rem; /* Ajusta o tamanho da fonte para telas médias */
-        padding: 10px 28px; /* Ajusta o padding para telas médias */
-        white-space: normal; /* Permite quebra de linha no texto */
-    }
-}
-
-/* Estilos para telas maiores */
-@media (min-width: 1025px) {
-    .btn-shine {
-        font-size: 1.5rem; /* Tamanho da fonte para telas maiores */
-        padding: 8px 24px; /* Padding para telas maiores */
-        white-space: nowrap; /* Não permite quebra de linha no texto */
-    }
-}
 
 /* Animação do brilho */
 @-moz-keyframes shine {
@@ -680,30 +691,40 @@ header {
     }
 }
 
-/* Ajustes para telas menores */
+/* Estilos gerais para o .btn-shine */
+.btn-shine {
+    font-size: 1.5rem; /* Tamanho da fonte padrão */
+    padding: 8px 24px; /* Padding padrão */
+    white-space: normal; /* Permite quebra de linha no texto */
+}
+
+/* Estilos para telas menores */
 @media (max-width: 768px) {
-    .header-container {
-        flex-direction: column; /* Muda a direção para coluna em telas menores */
-        align-items: center; /* Centraliza o conteúdo horizontalmente */
-        text-align: center; /* Alinha o texto ao centro */
-    }
-
-    .header-text {
-        max-width: 100%; /* A largura máxima do texto ocupa 100% da tela */
-        margin-bottom: 1rem; /* Adiciona um espaço abaixo do texto */
-    }
-
-    .header-image img {
-        width: 100%; /* Ajusta a largura da imagem para 100% da tela */
-        height: auto; /* Ajusta a altura da imagem automaticamente */
-    }
-
     .btn-shine {
         font-size: 1.5rem; /* Ajusta o tamanho da fonte para telas menores */
         padding: 8px 24px; /* Ajusta o padding para não ocupar muito espaço */
         white-space: normal; /* Permite quebra de linha no texto */
     }
 }
+
+/* Estilos para telas médias */
+@media (min-width: 769px) and (max-width: 1366px) {
+    .btn-shine {
+        font-size: 1.25rem; /* Ajusta o tamanho da fonte para telas médias */
+        padding: 10px 28px; /* Ajusta o padding para telas médias */
+        white-space: normal; /* Permite quebra de linha no texto */
+    }
+}
+
+/* Estilos para telas maiores */
+@media (min-width: 1025px) {
+    .btn-shine {
+        font-size: 1.5rem; /* Tamanho da fonte para telas maiores */
+        padding: 8px 24px; /* Padding para telas maiores */
+        white-space: nowrap; /* Não permite quebra de linha no texto */
+    }
+}
+
 
 /* Estilos para o container de contato */
 .contact-container {
