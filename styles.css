@@ -163,33 +163,33 @@ body {
     display: none;
     background-color: rgb(22, 20, 20);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
+    border-radius: 4px;
     z-index: 1;
     opacity: 0; /* Começa oculto */
     transition: opacity 0.3s ease, max-height 0.3s ease; /* Transição para suavizar a exibição */
     max-height: 0; /* Começa com altura zero */
     overflow: hidden; /* Oculta o conteúdo que ultrapassa a altura */
-    margin-top: 5px; /* Ajusta a distância do dropdown abaixo do botão */
+    margin-top: 4px; /* Ajusta a distância do dropdown abaixo do botão */
     position: absolute; /* Permite posicionar o dropdown em relação ao botão */
-    left: 0; /* Posiciona o dropdown ao lado esquerdo do botão */
-    width: 100%; /* Ajusta a largura ao botão */
-    max-width: 240px; /* Largura máxima do dropdown */
+    width: 300px; /* Ajusta a largura ao botão */
+    max-width: 600px; /* Largura máxima do dropdown */
 }
 
 /* Exibição do dropdown */
 .navbar .dropdown .dropdown-content.show {
     display: block;
     opacity: 1; /* Torna visível */
-    max-height: 300px; /* Altura máxima quando visível */
-}
+    width: 300px; /* Ajusta a largura ao botão */
+    max-height: 600px; /* Altura máxima quando visível */}
+
 
 /* Estilo para o conteúdo do dropdown */
 .navbar .dropdown .dropdown-content a {
     display: block; /* Cada item do dropdown ocupa uma linha */
     color: #ffffff;
-    padding: 12px 16px;
+    padding: 10px 10px;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 4px;
     transition: background-color 0.3s ease;
     position: relative; /* Necessário para a descrição posicionada abaixo */
     margin-bottom: 4px; /* Espaço entre os itens do dropdown */
@@ -216,15 +216,17 @@ body {
 .navbar .hamburger {
     display: none;
     flex-direction: column;
-    gap: 0.2rem; /* Reduzido o gap entre as linhas do hamburger */
+    gap: 0.3rem; /* Reduzido o gap entre as linhas do hamburger */
     cursor: pointer;
     z-index: 1001; /* Garante que o botão de hamburger esteja acima dos outros elementos */
     position: relative;
+    left: -20px; /* Ajusta a posição horizontal do botão para a esquerda */
+
 }
 
 .navbar .hamburger div {
     width: 20px; /* Reduzido o width das linhas */
-    height: 2px; /* Reduzido o height das linhas */
+    height: 4px; /* Reduzido o height das linhas */
     background-color: #fff;
     border-radius: 4px; /* Reduzido o border-radius das linhas */
 }
@@ -585,20 +587,26 @@ header {
 
 /* Estilos para o botão do cartão */
 .card__cta {
-    display: block;
-    align-self: end; /* Alinha o botão ao final */
-    margin: 1em 0 0.5em 0; /* Margens ao redor do botão */
-    text-align: center; /* Alinha o texto do botão ao centro */
+    display: flex; /* Exibe o botão como flexível */
+    align-items: center; /* Alinha verticalmente o conteúdo do botão */
+    justify-content: center; /* Centraliza o conteúdo do botão horizontalmente */
     text-decoration: none; /* Remove o sublinhado */
     color: #fff; /* Cor do texto */
     background-color: transparent; /* Fundo transparente */
     outline: 1px solid white; /* Contorno branco */
-    padding: 0.7em; /* Padding interno do botão */
+    padding: 0.7em 1em; /* Padding interno do botão */
     border-radius: 10px; /* Bordas arredondadas do botão */
     font-size: 1rem; /* Tamanho da fonte */
     font-weight: 600; /* Peso da fonte */
+    gap: 8px; /* Espaço entre o GIF e o texto */
 }
 
+.card__cta img {
+    width: 20px; /* Ajusta a largura do GIF */
+    height: auto; /* Mantém a proporção do GIF */
+}
+
+/* Estilo do cartão ao passar o mouse */
 .card:hover {
     background: #ffffff; /* Cor de fundo ao passar o mouse */
     color: #000; /* Cor do texto ao passar o mouse */
@@ -613,6 +621,7 @@ header {
     outline: none; /* Remove o contorno ao passar o mouse */
     background-color: #0c7509; /* Fundo do botão ao passar o mouse */
 }
+
 
 .section-title {
     font-size: 2.5rem; /* Ajuste o tamanho da fonte conforme necessário */
