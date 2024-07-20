@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .btn-donate {
+    --clr-font-main: hsla(0 0% 20% / 100);
+    --btn-bg-1: hsla(280, 100%, 69%, 1); /* Cor roxa clara */
+    --btn-bg-2: hsla(260, 100%, 56%, 1); /* Cor roxa mais escura */
+    --btn-bg-color: hsla(360, 100%, 100%, 1);
+    --radii: 0.5em;
+    cursor: pointer;
+    padding: 0.9em 1.4em;
+    min-width: 120px;
+    min-height: 44px;
+    font-size: var(--size, 1rem);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 500;
+    transition: 0.8s;
+    background-size: 280% auto;
+    background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+    border: none;
+    border-radius: var(--radii);
+    color: var(--btn-bg-color);
+    box-shadow: 0px 0px 20px rgba(160, 32, 240, 0.5), 0px 5px 5px -1px rgba(138, 43, 226, 0.25), inset 4px 4px 8px rgba(186, 85, 211, 0.5), inset -4px -4px 8px rgba(147, 112, 219, 0.35);
+  }
+  
+  .btn-donate:hover {
+    background-position: right top;
+  }
+  
+  .btn-donate:is(:focus, :focus-visible, :active) {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .btn-donate {
+      transition: linear;
+    }
+  }
+  
+  .rounded-image {
+              border-radius: 20px; /* Altere o valor conforme necessário para ajustar o grau de arredondamento */
+              overflow: hidden; /* Isso garante que a imagem não ultrapasse os limites do contêiner */
+          }
+  
+          .highlight {
+    background-color: #08a838; /* Cor de fundo */
+    color: #ffffff; /* Cor do texto */
+    border-radius: 8px; /* Arredondamento dos cantos */
+    padding: 0 8px; /* Espaçamento interno (horizontal) */
+    font-weight: bold; /* Negrito para destacar */
+}
+      </style>
+        <link rel="icon" href="/img/icon.png" type="image/png">
+        <title>SuaHost - A hospedagem feita para você!</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Acme&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">suahost</div>
+        <div class="nav-links" id="navLinks">
+            <div class="dropdown">
+                <button class="btn dropdown-btn">
+                    <i class="fas fa-cube"></i> Hospedagem Minecraft
+                </button>
+                <div class="dropdown-content">
+                    <a href="https://seusite.com.br/plano1">
+                        <i class="fas fa-cogs"></i> Hospedagem Simples
+                        <span class="dropdown-description">
+                            <i class="fas fa-info-circle"></i> Hospedagem simples para servidores pequenos
+                        </span>
+                    </a>
+                    <a href="https://seusite.com.br/plano2">
+                        <i class="fas fa-tools"></i> Hospedagem Avançada
+                        <span class="dropdown-description">
+                            <i class="fas fa-info-circle"></i> Hospedagem avançada para servidores de grande porte
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn dropdown-btn">
+                    <i class="fas fa-server"></i> Servidores Virtuais
+                </button>
+                <div class="dropdown-content">
+                    <a href="https://seusite.com.br/plano1">
+                        <i class="fas fa-cogs"></i> Hospedagem Simples
+                        <span class="dropdown-description">
+                            <i class="fas fa-info-circle"></i> Hospedagem simples para servidores pequenos
+                        </span>
+                    </a>
+                    <a href="https://seusite.com.br/plano2">
+                        <i class="fas fa-tools"></i> Hospedagem Avançada
+                        <span class="dropdown-description">
+                            <i class="fas fa-info-circle"></i> Hospedagem avançada para servidores de grande porte
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn dropdown-btn">
+                    <i class="fas fa-cogs"></i> Hospedagem cPanel
+                </button>
+                <div class="dropdown-content">
+                    <a href="https://seusite.com.br/plano1">
+                        <i class="fas fa-cogs"></i> Hospedagem Simples
+                        <span class="dropdown-description">
+                            <i class="fas fa-info-circle"></i> Hospedagem simples para servidores pequenos
+                        </span>
+                    </a>
+                    <a href="https://seusite.com.br/plano2">
+                        <i class="fas fa-tools"></i> Hospedagem Avançada
+                        <span class="dropdown-description">
+                            <i class="fas fa-info-circle"></i> Hospedagem avançada para servidores de grande porte
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <a href="https://seusite.com.br" class="nav-button">
+                <button class="btn-area-cliente">
+                    <i class="fas fa-user"></i> Área do Cliente
+                </button>
+            </a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- Novo conteúdo do header -->
+    <div class="header-container">
+        <div class="header-text">
+            <h1>
+                A MELHOR HOSPEDAGEM
+                DO <span class="highlight">BRASIL</span>
+            </h1>
+            <br>
+            <h2 class="btn-shine">
+                <a>Personalize suas configurações, modificações e convide seus amigos para aventuras inesquecíveis.<br>
+                Junte-se a nós e deixe a busca pela melhor experiência de Minecraft terminar aqui!</a>
+            </h2>                      
+        </div>
+        <div class="header-image">
+            <img src="img/img.jpeg">
+        </div>
+    </div>
+    <!-- Título acima dos cartões -->
+    <div class="section-title">Confira Nossos Melhores Planos Abaixo</div>
+
+    <div class="cards-container">
+        <div class="cards__inner">
+          <div class="cards__card card">
+            <img src="img/basico.png" alt="Icon 1" class="card__icon">
+            <p class="card__heading">Plano Básico</p>
+            <p class="card__price">00,00$/Mensal</p>
+            <ul class="card__bullets flow" role="list">
+              <li>Descrição 1</li>
+              <li>Descrição 2</li>
+              <li>Descrição 3</li>
+              <li>Descrição 4</li>
+            </ul>
+            <a class="card__cta cta" href="#basic">Adquirir Plano</a>
+          </div>
+          <div class="cards__card card">
+            <img src="img/medio.png" alt="Icon 2" class="card__icon">
+            <p class="card__heading">Plano Médio</p>
+            <p class="card__price">00,00$/Mensal</p>
+            <ul class="card__bullets flow" role="list">
+                <li>Descrição 1</li>
+                <li>Descrição 2</li>
+                <li>Descrição 3</li>
+                <li>Descrição 4</li>
+            </ul>
+            <a class="card__cta cta" href="#basic">Adquirir Plano</a>
+          </div>
+          <div class="cards__card card">
+            <img src="img/avançado.png" alt="Icon 3" class="card__icon">
+            <p class="card__heading">Plano Avançado</p>
+            <p class="card__price">00,00$/Mensal</p>
+            <ul class="card__bullets flow" role="list">
+                <li>Descrição 1</li>
+                <li>Descrição 2</li>
+                <li>Descrição 3</li>
+                <li>Descrição 4</li>
+            </ul>
+            <a class="card__cta cta" href="#basic">Adquirir Plano</a>
+          </div>
+          <div class="cards__card card">
+            <img src="img/creeper.png" alt="Icon 4" class="card__icon">
+            <p class="card__heading">Plano Creeper</p>
+            <p class="card__price">00,00$/Mensal</p>
+            <ul class="card__bullets flow" role="list">
+                <li>Descrição 1</li>
+                <li>Descrição 2</li>
+                <li>Descrição 3</li>
+                <li>Descrição 4</li>
+            </ul>
+            <a class="card__cta cta" href="#basic">Adquirir Plano</a>
+          </div>
+        </div>
+      </div>
+       <br>
+       <br>
+       <br>
+       <br>
+<!-- Novo container de contato -->
+<div class="contact-container">
+    <div class="contact-content">
+        <h2>Entre em contato conosco via <span class="discord-highlight">Discord</span>!</h2>
+        <a href="https://discord.com/invite/seulinkdiscord" class="contact-btn" target="_blank">Acessar Discord</a>
+    </div>
+</div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+
+            // Adiciona a funcionalidade de dropdown ao clicar
+            const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+            dropdownBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const dropdownContent = this.nextElementSibling;
+                    dropdownContent.classList.toggle('show');
+                    // Fecha os outros dropdowns
+                    document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                        if (dropdown !== dropdownContent) {
+                            dropdown.classList.remove('show');
+                        }
+                    });
+                });
+            });
+
+            // Fecha o dropdown se clicar fora dele
+            document.addEventListener('click', function(event) {
+                if (!event.target.matches('.dropdown-btn')) {
+                    document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                        dropdown.classList.remove('show');
+                    });
+                }
+            });
+        });
+    </script>
+    <script>
+        document.querySelector('.header-image').addEventListener('mousemove', (e) => {
+            const image = document.querySelector('.header-image img');
+            const { offsetWidth: width, offsetHeight: height } = image;
+            const { left, top } = image.getBoundingClientRect();
+            const x = e.clientX - left;
+            const y = e.clientY - top;
+            
+            // Calcula o ângulo de rotação em torno dos eixos X e Y
+            const rotateX = ((y / height) - 0.5) * 30; // 30 graus é o máximo de rotação
+            const rotateY = ((x / width) - 0.5) * -30; // 30 graus é o máximo de rotação, negativo para inverter o movimento
+        
+            // Aplica a transformação 3D à imagem
+            image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        
+        document.querySelector('.header-image').addEventListener('mouseleave', () => {
+            const image = document.querySelector('.header-image img');
+            image.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+        </script>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- Footer -->
+        <footer class="pt-20 pb-8 bg-black">
+            <div class="container mx-auto px-4 2xl:px-0 max-w-7xl">
+              <div class="flex flex-col lg:flex-row justify-center lg:justify-between items-center">
+                <div class="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-3 lg:w-[600px]">
+                  <p class="text-[12px] lg:text-[14px] text-center lg:text-start font-light text-gray-200">Oferecemos soluções de Servidor Dedicado de qualidade e alto desempenho em que você pode confiar, combinadas com o suporte que todos os clientes precisam e merecem.</p>
+                  <p></p>
+    
+
+                  
+                  
+                    
+                  </ul>
+                </div>
+                <div class="flex gap-16 mt-2">
+                  <ul class="flex flex-col gap-3">
+                    <li class="text-white font-semibold">Serviços</li>
+                    <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Hospedagem Minecraft" href="/minecraft/us">Hospedagem Minecraft</a>
+                    </li>
+                    <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Hospedagem para Bots" href="/bots">Hospedagem para Bots</a>
+                    </li>
+                    <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Servidor VPS" href="/vps">Servidor VPS</a>
+                    </li>
+                    <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Servidores Dedicados" href="/servidores-dedicado">Servidores Dedicados</a>
+                    </li>
+                  </ul>
+                  <ul class="flex flex-col gap-3">
+                    <li class="text-white font-semibold">Suporte</li>
+                    <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Entrar em contato" target="_blank" href="https://seusite.com.br/">Entrar em contato</a>
+                    </li>
+                    <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Área do Cliente" href="https://seusite.com.br/">Área do Cliente</a>
+                    </li>
+                    <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Abrir um ticket" href="https://seusite.com.br/">Abrir um ticket</a>
+                    </li>
+                    <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Status" href="https://seusite.com.br/">Status</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="bg-[#171B2E] h-[2px] w-full my-5">
+              </div>
+              <div class="flex justify-between items-center">
+                <p class="text-[12px] lg:text-[14px] text-white">© <!-- -->2024<!-- --> - Sua Host. Todos os direitos reservados. Feito por KronosJoga   <i class="fa-solid fa-heart fa-beat" style="color: #ff0000;"></i></p>
+                <ul class="flex items-center gap-3">
+                  <li>
+                    <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Termos de Serviço" href="/termos">Termos de Serviço</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </footer>
+
+</body>
+</html>

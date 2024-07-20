@@ -1,0 +1,736 @@
+/* CSS para o corpo e a navbar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+/* Adicione a importação da fonte Acme do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+/* CSS para a navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 1rem 0; /* Ajuste o padding para não ter espaço acima e abaixo */
+    position: fixed;
+    width: 100%; /* Ajustado para ocupar toda a largura da página */
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0; /* Remove a margem para que a navbar fique colada ao topo */
+    z-index: 1000;
+}
+
+
+/* Estilos da logo */
+.navbar .logo {
+    font-size: 2.2rem; /* Tamanho da fonte da logo aumentado */
+    font-weight: bold;
+    color: #fff;
+    font-family: "Francois One", sans-serif; /* Fonte Acme aplicada */
+    margin-left: 9rem; /* Adiciona mais espaço entre a logo e os botões */
+}
+
+/* Estilos dos links e botões da navbar */
+.navbar .nav-links {
+    display: flex;
+    gap: 1rem; /* Espaçamento aumentado entre os botões */
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center; /* Adiciona alinhamento vertical */
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    position: relative; /* Necessário para o dropdown */
+}
+
+/* Estilos dos botões */
+.navbar .nav-links a .btn,
+.navbar .nav-links a .btn-area-cliente {
+    margin-right: 60px;
+    padding: 12px 24px; /* Padding do botão aumentado */
+    text-transform: uppercase;
+    border-radius: 6px; /* Arredondamento dos cantos */
+    font-size: 14px; /* Tamanho da fonte */
+    font-weight: 340;
+    color: #ffffff; /* Cor do texto */
+    background: transparent; /* Fundo transparente */
+    cursor: pointer;
+    transition: 0.3s ease;
+    user-select: none;
+    border: none; /* Remove a borda */
+    box-shadow: none; /* Remove a sombra */
+}
+
+.navbar .nav-links a .btn:hover,
+.navbar .nav-links a .btn:focus {
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+    background: #00ff4c; /* Cor de fundo ao passar o mouse */
+    border: none; /* Remove a borda ao passar o mouse */
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff; /* Efeito de brilho no texto */
+    box-shadow: 0 0 5px #00ff2a, 0 0 20px #00ff2a, 0 0 50px #00ff2a, 0 0 100px #00ff2a; /* Efeito de brilho ao redor do botão */
+}
+
+/* Estilos para o botão "Área do Cliente" */
+.navbar .nav-links a .btn-area-cliente {
+    font-size: 19px; /* Tamanho da fonte */
+    background-color: #008542; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%); /* Sombra do texto */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0; /* Remove a borda */
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: unset;
+    padding: 0.5rem 1rem; /* Padding do botão */
+    text-decoration: none;
+    font-weight: 700; /* Peso da fonte ajustado */
+    transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+    margin-left: 4rem; /* Ajuste o valor para mover o botão mais para a direita */
+    min-width: 200px; /* Define uma largura mínima para o botão */
+}
+
+
+.navbar .nav-links a .btn-area-cliente:before {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+    z-index: -1;
+    background-color: #008542 !important;
+    box-shadow: 0 -4px rgb(21 108 0 / 50%) inset,
+      0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset,
+      4px 0 rgb(21 108 0 / 50%) inset;
+}
+
+.navbar .nav-links a .btn-area-cliente:after {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+    transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+
+.navbar .nav-links a .btn-area-cliente:hover:before {
+    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset,
+      -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.navbar .nav-links a .btn-area-cliente:hover:after {
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+}
+
+.navbar .nav-links a .btn-area-cliente:active {
+    transform: translateY(4px);
+}
+
+.navbar .nav-links a .btn-area-cliente:active:after {
+    box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+}
+
+/* Estilos do dropdown */
+.navbar .dropdown {
+    position: relative; /* Necessário para o dropdown */
+    display: inline-block; /* Garante que o dropdown fique dentro do mesmo container do botão */
+}
+
+/* Estilo do dropdown para telas menores */
+.navbar .dropdown .dropdown-content {
+    display: none;
+    background-color: rgb(22, 20, 20);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 1;
+    opacity: 0; /* Começa oculto */
+    transition: opacity 0.3s ease, max-height 0.3s ease; /* Transição para suavizar a exibição */
+    max-height: 0; /* Começa com altura zero */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa a altura */
+    margin-top: 5px; /* Ajusta a distância do dropdown abaixo do botão */
+    position: absolute; /* Permite posicionar o dropdown em relação ao botão */
+    left: 0; /* Posiciona o dropdown ao lado esquerdo do botão */
+    width: 100%; /* Ajusta a largura ao botão */
+    max-width: 240px; /* Largura máxima do dropdown */
+}
+
+/* Exibição do dropdown */
+.navbar .dropdown .dropdown-content.show {
+    display: block;
+    opacity: 1; /* Torna visível */
+    max-height: 300px; /* Altura máxima quando visível */
+}
+
+/* Estilo para o conteúdo do dropdown */
+.navbar .dropdown .dropdown-content a {
+    display: block; /* Cada item do dropdown ocupa uma linha */
+    color: #ffffff;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    position: relative; /* Necessário para a descrição posicionada abaixo */
+    margin-bottom: 4px; /* Espaço entre os itens do dropdown */
+}
+
+/* Remove a margem do último item */
+.navbar .dropdown .dropdown-content a:last-child {
+    margin-bottom: 0;
+}
+
+.navbar .dropdown .dropdown-content a:hover {
+    background-color: #cac9c9;
+}
+
+/* Estilo para a descrição da categoria */
+.navbar .dropdown .dropdown-content a .dropdown-description {
+    display: block; /* Exibe a descrição em bloco abaixo do item principal */
+    font-size: 12px; /* Tamanho da fonte da descrição */
+    color: #ffffff; /* Cor da descrição */
+    margin-top: 4px; /* Margem acima da descrição */
+}
+
+/* Estilos do botão hamburger */
+.navbar .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 0.2rem; /* Reduzido o gap entre as linhas do hamburger */
+    cursor: pointer;
+    z-index: 1001; /* Garante que o botão de hamburger esteja acima dos outros elementos */
+    position: relative;
+}
+
+.navbar .hamburger div {
+    width: 20px; /* Reduzido o width das linhas */
+    height: 2px; /* Reduzido o height das linhas */
+    background-color: #fff;
+    border-radius: 4px; /* Reduzido o border-radius das linhas */
+}
+
+/* Estilos para o submenu */
+.navbar .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+}
+
+/* Estilos dos links no submenu */
+.navbar .nav-links a {
+    display: block;
+    padding: 0.5rem;
+    color: #fff;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* Estilos gerais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+    }
+
+    .navbar .nav-links.show {
+        display: flex;
+    }
+
+    .navbar .hamburger {
+        display: flex;
+    }
+
+    .navbar .dropdown .dropdown-content {
+        position: static; /* Faz com que o dropdown seja exibido como um bloco normal */
+        width: 100%; /* Largura completa do menu */
+        max-width: none; /* Remove a largura máxima */
+        margin-top: 0; /* Remove a margem superior */
+        transform: none; /* Remove o ajuste de transformação */
+    }
+
+    /* Estilos adicionais para garantir que os containers de preços se ajustem */
+    .card {
+        width: 100%; /* Ajusta a largura dos cartões para 100% da tela */
+        height: auto; /* Ajusta a altura automaticamente */
+        box-sizing: border-box; /* Inclui bordas e padding no cálculo da largura e altura */
+    }
+}
+
+/* Estilos para telas maiores */
+@media (min-width: 769px) {
+    .container {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .navbar .nav-links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navbar .hamburger {
+        display: none;
+    }
+
+    .navbar .dropdown .dropdown-content {
+        position: absolute;
+        width: auto;
+        max-width: 200px;
+        margin-top: 0;
+        transform: none;
+    }
+}
+
+/* Estilo para o botão de dropdown */
+.navbar .dropdown-btn {
+    background: transparent; /* Fundo transparente */
+    border: none; /* Remove a borda */
+    cursor: pointer;
+    color: #fff;
+    padding: 12px 24px; /* Padding do botão */
+    text-transform: uppercase;
+    border-radius: 6px; /* Arredondamento dos cantos */
+    font-size: 14px; /* Tamanho da fonte */
+    font-weight: 340;
+    transition: 0.3s ease;
+    position: relative; /* Necessário para o dropdown */
+}
+
+/* Efeito de hover para o botão de dropdown */
+.navbar .dropdown-btn:hover {
+    color: #ffffff;
+    background: #00ff4c;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #00ff2a, 0 0 20px #00ff2a, 0 0 50px #00ff2a, 0 0 100px #00ff2a;
+}
+
+
+/* CORPO DO SITE */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Certifique-se de que a fonte está aplicada corretamente */
+}
+
+header {
+    padding-top: 80px; /* Ajusta o espaço acima do header */
+}
+
+.header-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o texto e a imagem */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro do container */
+    gap: 20px; /* Espaçamento entre o texto e a imagem */
+    padding: 5rem; /* Adiciona um pouco de espaçamento ao redor do container */
+    min-height: 100vh; /* Garante que o container ocupe a altura total da viewport */
+    flex-direction: row; /* Alinha o conteúdo na horizontal */
+    text-align: left; /* Ajusta o alinhamento do texto para a esquerda */
+    margin-top: 1px; /* Garante que o container esteja bem abaixo da navbar */
+    position: relative; /* Garante que os filhos se posicionem em relação a este container */
+}
+
+.header-text {
+    max-width: 50%; /* Limita a largura máxima do texto para melhor visualização */
+    z-index: 1; /* Garante que o texto fique acima da imagem */
+}
+
+.header-text h1 {
+    font-size: 4rem; /* Tamanho do título */
+    margin: 0; /* Remove a margem padrão do h1 */
+    color: #ffffff; /* Garante que o texto seja visível, ajuste conforme necessário */
+}
+
+.header-text h2 {
+    font-size: 1rem; /* Tamanho do subtítulo */
+    margin: 0; /* Remove a margem padrão do h2 */
+    color: #ffffff; /* Garante que o texto seja visível, ajuste conforme necessário */
+}
+
+.header-image {
+    position: relative;
+    perspective: 1000px; /* Adiciona perspectiva para o efeito 3D */
+    z-index: 0; /* Garante que a imagem fique atrás do texto */
+}
+
+.header-image img {
+    width: 310px; /* Largura da imagem */
+    height: 310px; /* Altura da imagem */
+    object-fit: cover; /* Garante que a imagem mantenha suas proporções */
+    border-radius: 8px; /* Adiciona borda arredondada à imagem */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+    transform-style: preserve-3d; /* Permite o efeito 3D */
+    transform: rotateX(0deg) rotateY(0deg); /* Inicializa a rotação */
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        align-items: center; /* Centraliza o conteúdo horizontalmente */
+        text-align: center; /* Alinha o texto ao centro */
+    }
+
+    .header-text {
+        max-width: 100%; /* A largura máxima do texto ocupa 100% da tela */
+        margin-bottom: 1rem; /* Adiciona um espaço abaixo do texto */
+        z-index: 1; /* Garante que o texto fique acima da imagem */
+    }
+
+    .header-image {
+        width: auto; /* Ajusta a largura da imagem para 100% da tela */
+        height: auto; /* Ajusta a altura da imagem automaticamente */
+        z-index: 0; /* Garante que a imagem fique atrás do texto */
+    }
+
+    .header-text h1 {
+        font-size: 2rem; /* Ajusta o tamanho do título para telas menores */
+    }
+
+    .header-text h2 {
+        font-size: 1rem; /* Ajusta o tamanho do subtítulo para telas menores */
+    }
+}
+
+
+/* Estilo para o contêiner de cartões */
+.cards-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    flex-wrap: wrap; /* Permite que os cartões se movam para a linha seguinte se necessário */
+    gap: 30px; /* Espaço entre os cartões */
+    padding: 40px; /* Padding ao redor do contêiner */
+}
+
+/* Estilos para o contêiner interno dos cartões */
+.cards__inner {
+    display: flex; /* Exibe os cartões em linha */
+    flex-wrap: wrap; /* Permite que os cartões se movam para a linha seguinte se necessário */
+    gap: 30px; /* Espaço entre os cartões */
+    width: 100%; /* Garantir que o contêiner ocupe toda a largura disponível */
+    justify-content: center; /* Centraliza os cartões horizontalmente dentro do contêiner */
+}
+
+/* Estilos para o cartão */
+.card {
+    width: 250px; /* Largura do cartão */
+    height: auto; /* Altura automática para ajustar ao conteúdo */
+    background: #141414; /* Fundo do cartão */
+    border: 1px solid #eceff133; /* Borda do cartão */
+    border-radius: 15px; /* Bordas arredondadas */
+    padding: 1.5em 2em; /* Padding interno do cartão */
+    display: grid;
+    grid-template-rows: auto auto auto 1fr; /* Layout em grid */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    gap: 1.25em; /* Espaçamento entre os elementos do cartão */
+    color: #eceff1; /* Cor do texto */
+    transition: all ease-in-out 0.3s; /* Transição suave */
+}
+
+/* Estilos para o ícone dentro do cartão */
+.card__icon {
+    width: 45px; /* Largura do ícone */
+    height: 45px; /* Altura do ícone */
+    display: block; /* Exibe o ícone como um bloco */
+    margin: 0 auto 15px; /* Centraliza o ícone e adiciona margem inferior */
+}
+
+/* Estilos para o título do cartão */
+.card__heading {
+    font-size: 1.5em; /* Tamanho da fonte aumentado */
+    font-weight: 600; /* Peso da fonte */
+    margin-bottom: 0.5em; /* Espaçamento inferior do título */
+}
+
+/* Estilos para o preço do cartão */
+.card__price {
+    font-size: 1.75em; /* Tamanho da fonte */
+    font-weight: 700; /* Peso da fonte */
+}
+
+/* Estilos para os itens da lista */
+.card__bullets {
+    line-height: 1.4; /* Altura da linha */
+}
+
+/* Estilos para o botão do cartão */
+.card__cta {
+    display: block;
+    align-self: end; /* Alinha o botão ao final */
+    margin: 1em 0 0.5em 0; /* Margens ao redor do botão */
+    text-align: center; /* Alinha o texto do botão ao centro */
+    text-decoration: none; /* Remove o sublinhado */
+    color: #fff; /* Cor do texto */
+    background-color: transparent; /* Fundo transparente */
+    outline: 1px solid white; /* Contorno branco */
+    padding: 0.7em; /* Padding interno do botão */
+    border-radius: 10px; /* Bordas arredondadas do botão */
+    font-size: 1rem; /* Tamanho da fonte */
+    font-weight: 600; /* Peso da fonte */
+}
+
+.card:hover {
+    background: #ffffff; /* Cor de fundo ao passar o mouse */
+    color: #000; /* Cor do texto ao passar o mouse */
+    outline: 1px solid rgb(255, 255, 255); /* Contorno ao passar o mouse */
+    box-shadow: inset 0 0 80px whitesmoke, inset 20px 0 80px rgba(43, 255, 0, 0.747),
+                inset -20px 0 80px #0ff, inset 20px 0 300px rgb(30, 255, 0), inset -20px 0 300px #0ff,
+                0 0 50px #fff, -10px 0 80px rgb(30, 255, 0), 10px 0 80px rgb(18, 153, 1); /* Efeito de sombra */
+    transition: all ease-in-out 0.3s; /* Transição suave */
+}
+
+.card:hover .card__cta {
+    outline: none; /* Remove o contorno ao passar o mouse */
+    background-color: #0c7509; /* Fundo do botão ao passar o mouse */
+}
+
+.section-title {
+    font-size: 2.5rem; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #ffffff; /* Cor branca para o texto */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 2rem; /* Espaçamento abaixo do título */
+    font-weight: bold; /* Fonte em negrito */
+    padding: 1rem; /* Adiciona um padding ao redor do texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto semi-transparente */
+    border-radius: 0.5rem; /* Arredondamento das bordas do fundo */
+}
+
+
+/* Estilos gerais para h2 com animação */
+.btn-shine {
+    display: inline-block; /* Faz o elemento se ajustar ao conteúdo */
+    padding: 12px 48px;
+    color: #fff;
+    background: linear-gradient(to right, #5df537 0, #acffa1 10%, #35993e 20%);
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Animação do brilho */
+@-moz-keyframes shine {
+    0% {
+        background-position: 0;
+    }
+    60% {
+        background-position: 400px;
+    }
+    100% {
+        background-position: 400px;
+    }
+}
+@-webkit-keyframes shine {
+    0% {
+        background-position: 0;
+    }
+    60% {
+        background-position: 400px;
+    }
+    100% {
+        background-position: 400px;
+    }
+}
+@-o-keyframes shine {
+    0% {
+        background-position: 0;
+    }
+    60% {
+        background-position: 400px;
+    }
+    100% {
+        background-position: 400px;
+    }
+}
+@keyframes shine {
+    0% {
+        background-position: 0;
+    }
+    60% {
+        background-position: 400px;
+    }
+    100% {
+        background-position: 700px;
+    }
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        align-items: center; /* Centraliza o conteúdo horizontalmente */
+        text-align: center; /* Alinha o texto ao centro */
+    }
+
+    .header-text {
+        max-width: 100%; /* A largura máxima do texto ocupa 100% da tela */
+        margin-bottom: 1rem; /* Adiciona um espaço abaixo do texto */
+    }
+
+    .header-image img {
+        width: 100%; /* Ajusta a largura da imagem para 100% da tela */
+        height: auto; /* Ajusta a altura da imagem automaticamente */
+    }
+
+    .btn-shine {
+        font-size: 1.5rem; /* Ajusta o tamanho da fonte para telas menores */
+        padding: 8px 24px; /* Ajusta o padding para não ocupar muito espaço */
+        white-space: normal; /* Permite quebra de linha no texto */
+    }
+}
+
+/* Estilos para o container de contato */
+.contact-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 90%; /* Ajusta a largura para telas menores */
+    max-width: 600px; /* Define uma largura máxima */
+    height: auto; /* Ajusta a altura automaticamente */
+    background-image: url('img/back.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir o container */
+    background-position: center; /* Centraliza a imagem no container */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+    position: relative; /* Necessário para o posicionamento do conteúdo */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 1rem; /* Adiciona um padding para o container */
+}
+
+/* Conteúdo dentro do container de contato */
+.contact-content {
+    text-align: center; /* Centraliza o texto */
+    color: #ffffff; /* Cor do texto */
+    z-index: 1; /* Garante que o texto fique acima da imagem */
+    padding: 1rem; /* Adiciona um padding para o conteúdo */
+}
+
+/* Estilos para o texto dentro do container de contato */
+.contact-content h2 {
+    font-size: 1.5rem; /* Tamanho do texto */
+    margin-bottom: 1rem; /* Espaço abaixo do título */
+}
+
+/* Estilos para o destaque do texto "Discord" */
+.discord-highlight {
+    background-color: #7289da; /* Cor de fundo do Discord */
+    color: #ffffff; /* Cor do texto dentro do fundo */
+    padding: 0.2em 0.5em; /* Espaço interno ao redor da palavra */
+    border-radius: 0.3em; /* Bordas arredondadas */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+/* Estilos para o botão dentro do container de contato */
+.contact-btn {
+    display: inline-block;
+    padding: 0.8em 2em; /* Ajusta o padding para telas menores */
+    font-size: 14px; /* Ajusta o tamanho da fonte para telas menores */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none; /* Remove sublinhado para links */
+}
+
+/* Efeito de hover para o botão */
+.contact-btn:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+/* Efeito de click para o botão */
+.contact-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .contact-container {
+        width: 90%; /* Ajusta a largura do container para telas menores */
+        padding: 1rem; /* Ajusta o padding */
+    }
+
+    .contact-content h2 {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte para telas menores */
+        margin-bottom: 0.5rem; /* Reduz a margem abaixo do título */
+    }
+
+    .contact-btn {
+        padding: 0.6em 1.5em; /* Ajusta o padding do botão */
+        font-size: 14px; /* Ajusta o tamanho da fonte do botão */
+    }
+}
