@@ -297,23 +297,59 @@ body {
     }
 
     .navbar .dropdown .dropdown-content {
-        position: static; /* Faz com que o dropdown seja exibido como um bloco normal */
-        width: 100%; /* Largura completa do menu */
-        max-width: none; /* Remove a largura máxima */
-        margin-top: 0; /* Remove a margem superior */
-        transform: none; /* Remove o ajuste de transformação */
+        position: static;
+        width: 100%;
+        max-width: none;
+        margin-top: 0;
+        transform: none;
     }
 
-    /* Estilos adicionais para garantir que os containers de preços se ajustem */
     .card {
-        width: 100%; /* Ajusta a largura dos cartões para 100% da tela */
-        height: auto; /* Ajusta a altura automaticamente */
-        box-sizing: border-box; /* Inclui bordas e padding no cálculo da largura e altura */
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+    }
+}
+
+/* Estilos para telas médias */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .navbar .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        width: auto;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .navbar .hamburger {
+        display: none;
+    }
+
+    .navbar .dropdown .dropdown-content {
+        position: absolute;
+        width: auto;
+        max-width: 200px;
+        margin-top: 0;
+        transform: none;
+    }
+
+    .card {
+        width: 48%; /* Ajusta a largura dos cartões para 48% para que dois cartões caibam lado a lado */
+        margin: 1%; /* Adiciona margem para espaçamento */
+        height: auto;
+        box-sizing: border-box;
     }
 }
 
 /* Estilos para telas maiores */
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
     .container {
         width: 90%;
         padding: 1rem;
