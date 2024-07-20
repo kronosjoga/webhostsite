@@ -28,6 +28,5 @@ Se você utilizar este template e quiser dar os créditos, ficarei muito grato. 
 
 
 
-Versão telas menores
 ![image](https://github.com/user-attachments/assets/be2cd2c5-417b-4cfb-92a7-f8cdab9b4726)
 ![image](https://github.com/user-attachments/assets/f5ae0efb-fd7a-4f78-ae6a-ba4c7f7695fc)
