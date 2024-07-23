@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .btn-donate {
+            --clr-font-main: hsla(0 0% 20% / 100);
+            --btn-bg-1: rgb(110, 255, 97); /* Cor roxa clara */
+            --btn-bg-2: rgb(20, 71, 10); /* Cor roxa mais escura */
+            --btn-bg-color: hsla(360, 100%, 100%, 1);
+            --radii: 0.5em;
+            cursor: pointer;
+            padding: 0.9em 1.4em;
+            min-width: 120px;
+            min-height: 44px;
+            font-size: var(--size, 1rem);
+            font-family: "Segoe UI", system-ui, sans-serif;
+            font-weight: 500;
+            transition: 0.8s;
+            background-size: 280% auto;
+            background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+            border: none;
+            border-radius: var(--radii);
+            color: var(--btn-bg-color);
+            box-shadow: 0px 0px 20px rgba(56, 240, 32, 0.5), 0px 5px 5px -1px rgba(86, 226, 43, 0.25), inset 4px 4px 8px rgba(106, 211, 85, 0.5), inset -4px -4px 8px rgba(124, 219, 112, 0.35);
+        }
+
+        .btn-donate:hover {
+            background-position: right top;
+        }
+
+        .btn-donate:is(:focus, :focus-visible, :active) {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .btn-donate {
+                transition: linear;
+            }
+        }
+
+        .rounded-image {
+            border-radius: 20px; /* Altere o valor conforme necessário para ajustar o grau de arredondamento */
+            overflow: hidden; /* Isso garante que a imagem não ultrapasse os limites do contêiner */
+        }
+
+        .highlight {
+            background-color: #08a838; /* Cor de fundo */
+            color: #ffffff; /* Cor do texto */
+            border-radius: 8px; /* Arredondamento dos cantos */
+            padding: 0 8px; /* Espaçamento interno (horizontal) */
+            font-weight: bold; /* Negrito para destacar */
+        }
+
+        /* CSS para os containers de seleção de país */
+        .country-selection {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .country-container {
+            width: 100px;
+            padding: 10px;
+            background-color: #f0f0f0; /* Cor de fundo */
+            border: 2px solid #ccc; /* Borda */
+            border-radius: 8px; /* Arredondamento dos cantos */
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .country-container:hover {
+            background-color: #e0e0e0; /* Cor de fundo ao passar o mouse */
+        }
+
+        .country-container.selected {
+            background-color: #08a838; /* Cor de fundo quando selecionado */
+            color: #fff; /* Cor do texto quando selecionado */
+            border-color: #08a838; /* Cor da borda quando selecionado */
+        }
+    </style>
+    <link rel="icon" href="planos/icon.png" type="image/png">
+    <title>SuaHost - A hospedagem feita para você!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Acme&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">suahost</div>
+        <div class="nav-links" id="navLinks">
+            <div class="dropdown">
+                <button class="btn dropdown-btn">
+                    <i class="fas fa-cube"></i> Hospedagem Minecraft
+                </button>
+                <div class="dropdown-content">
+                    <a href="/planos/index.html">
+                        <i class="fas fa-cogs"></i> Hospedagem Simples
+                        <span class="dropdown-description">
+                            <i class="fas fa-info-circle"></i> Hospedagem simples para servidores pequenos
+                        </span>
+                    </a>
+                    <a href="https://seusite.com.br/plano2">
+                        <i class="fas fa-tools"></i> Hospedagem Avançada
+                        <span class="dropdown-description">
+                            <i class="fas fa-info-circle"></i> Hospedagem avançada para servidores de grande porte
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn dropdown-btn">
+                    <i class="fas fa-server"></i> Servidores Virtuais
+                </button>
+                <div class="dropdown-content">
+                    <a href="https://seusite.com.br/plano1">
+                        <i class="fas fa-cogs"></i> Hospedagem Simples
+                        <span class="dropdown-description">
+                            <i class="fas fa-info-circle"></i> Hospedagem simples para servidores pequenos
+                        </span>
+                    </a>
+                    <a href="https://seusite.com.br/plano2">
+                        <i class="fas fa-tools"></i> Hospedagem Avançada
+                        <span class="dropdown-description">
+                            <i class="fas fa-info-circle"></i> Hospedagem avançada para servidores de grande porte
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn dropdown-btn">
+                    <i class="fas fa-cogs"></i> Hospedagem cPanel
+                </button>
+                <div class="dropdown-content">
+                    <a href="https://seusite.com.br/plano1">
+                        <i class="fas fa-cogs"></i> Hospedagem Simples
+                        <span class="dropdown-description">
+                            <i class="fas fa-info-circle"></i> Hospedagem simples para servidores pequenos
+                        </span>
+                    </a>
+                    <a href="https://seusite.com.br/plano2">
+                        <i class="fas fa-tools"></i> Hospedagem Avançada
+                        <span class="dropdown-description">
+                            <i class="fas fa-info-circle"></i> Hospedagem avançada para servidores de grande porte
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <a href="https://seusite.com.br" class="nav-button">
+                <button class="btn-area-cliente">
+                    <i class="fas fa-user"></i> Área do Cliente
+                </button>
+            </a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+<!-- Novo conteúdo do header -->
+<div class="header-container">
+    <div class="header-content">
+        <div class="header-text">
+            <h1>
+                CONFIRA NOSSOS <span class="highlight">PLANOS</span> ABAIXO
+            </h1>
+        </div>
+        <!-- CARD INFORMAÇÕES -->
+        <div class="info-card">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="info-card-inner">
+              <div class="info-item"><i class="fas fa-microchip"></i> CPU: 2 cores</div>
+              <div class="info-item"><i class="fas fa-memory"></i> RAM: 4 GB</div>
+              <div class="info-item"><i class="fas fa-hdd"></i> DISCO: 100 GB</div>
+              <div class="info-item"><i class="fas fa-network-wired"></i> Network: 1 Gbps</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+      
+<!-- Seletor de país -->
+<div class="selection-button-container">
+    <button id="country-bra" class="selection-button">
+        <img src="planos/bra.png" class="flag-icon"> Brasil
+    </button>
+    <button id="country-eua" class="selection-button">
+        <img src="planos/eua.png" class="flag-icon"> Estados Unidos
+    </button>
+</div>
+<br>
+<br>
+<br>
+<div class="cards-container">
+    <div class="cards__inner">
+        <div class="cards__card card" id="card-1">
+            <img src="planos/basico.png" alt="Icon 1" class="card__icon">
+            <p class="card__title">Básico</p>
+            <p class="card__description">Ideal para iniciantes.</p>
+            <p class="card__price">R$ 29,90/mês</p>
+            <button class="btn-donate">Assinar</button>
+        </div>
+        <div class="cards__card card" id="card-2">
+            <img src="planos/medio.png" alt="Icon 2" class="card__icon">
+            <p class="card__title">Intermediário</p>
+            <p class="card__description">Para projetos em crescimento.</p>
+            <p class="card__price">R$ 59,90/mês</p>
+            <button class="btn-donate">Assinar</button>
+        </div>
+        <div class="cards__card card" id="card-3">
+            <img src="planos/avançado.png" alt="Icon 3" class="card__icon">
+            <p class="card__title">Avançado</p>
+            <p class="card__description">Para grandes projetos.</p>
+            <p class="card__price">R$ 99,90/mês</p>
+            <button class="btn-donate">Assinar</button>
+        </div>
+        
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        // Adiciona a funcionalidade de dropdown ao clicar
+        const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+        dropdownBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const dropdownContent = this.nextElementSibling;
+                dropdownContent.classList.toggle('show');
+                // Fecha os outros dropdowns
+                document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                    if (dropdown !== dropdownContent) {
+                        dropdown.classList.remove('show');
+                    }
+                });
+            });
+        });
+
+        // Fecha o dropdown se clicar fora dele
+        document.addEventListener('click', function(event) {
+            if (!event.target.matches('.dropdown-btn')) {
+                document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                    dropdown.classList.remove('show');
+                });
+            }
+        });
+    });
+</script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const countryBRA = document.getElementById('country-bra');
+            const countryEUA = document.getElementById('country-eua');
+            const cards = document.querySelectorAll('.card__price');
+            
+            countryBRA.addEventListener('click', function() {
+                countryBRA.classList.add('selected');
+                countryEUA.classList.remove('selected');
+                updatePrices('BRA');
+            });
+            
+            countryEUA.addEventListener('click', function() {
+                countryBRA.classList.remove('selected');
+                countryEUA.classList.add('selected');
+                updatePrices('EUA');
+            });
+            
+            function updatePrices(country) {
+                if (country === 'BRA') {
+                    cards[0].textContent = 'R$ 29,90/mês';
+                    cards[1].textContent = 'R$ 59,90/mês';
+                    cards[2].textContent = 'R$ 99,90/mês';
+                } else if (country === 'EUA') {
+                    cards[0].textContent = '$ 5.99/month';
+                    cards[1].textContent = '$ 11.99/month';
+                    cards[2].textContent = '$ 19.99/month';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

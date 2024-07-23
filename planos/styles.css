@@ -379,13 +379,20 @@ header {
     display: flex;
     align-items: center; /* Alinha verticalmente o texto e a imagem */
     justify-content: center; /* Centraliza horizontalmente o conteúdo dentro do container */
-    gap: 20px; /* Espaçamento entre o texto e a imagem */
     padding: 2rem; /* Adiciona um pouco de espaçamento ao redor do container */
     min-height: 100vh; /* Garante que o container ocupe a altura total da viewport */
     flex-direction: column; /* Alinha o conteúdo na vertical */
     text-align: center; /* Alinha o texto ao centro */
     margin-top: 1px; /* Garante que o container esteja bem abaixo da navbar */
     position: relative; /* Garante que os filhos se posicionem em relação a este container */
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o texto e o cartão */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro do container */
+    gap: 40px; /* Espaçamento maior entre o título e o cartão */
+    flex-direction: row; /* Alinha o texto e o cartão lado a lado */
 }
 
 .header-text {
@@ -407,21 +414,94 @@ header {
     color: #ffffff; /* Garante que o texto seja visível, ajuste conforme necessário */
 }
 
-.header-image {
+.info-card {
+    width: 150px; /* Reduz o tamanho do cartão */
+    height: 200px; /* Reduz o tamanho do cartão */
+    transition: all 0.2s;
     position: relative;
-    perspective: 1000px; /* Adiciona perspectiva para o efeito 3D */
-    z-index: 0; /* Garante que a imagem fique atrás do texto */
+    cursor: pointer;
 }
 
-.header-image img {
-    width: 310px; /* Largura da imagem */
-    height: 310px; /* Altura da imagem */
-    object-fit: cover; /* Garante que a imagem mantenha suas proporções */
-    border-radius: 8px; /* Adiciona borda arredondada à imagem */
-    transition: transform 0.3s ease; /* Adiciona uma transição suave */
-    transform-style: preserve-3d; /* Permite o efeito 3D */
-    transform: rotateX(0deg) rotateY(0deg); /* Inicializa a rotação */
+.info-card-inner {
+    width: inherit;
+    height: inherit;
+    background: rgba(255, 0, 0, 0.05) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
 }
+
+.info-card:hover {
+    transform: scale(1.04) rotate(1deg);
+}
+
+.circle {
+    width: 50px; /* Reduz o tamanho dos círculos */
+    height: 50px; /* Reduz o tamanho dos círculos */
+    background: repeating-linear-gradient(48deg, #ae4f23 0%, #ff0000 100%) !important;
+    border-radius: 35% 30% 75% 30% / 49% 30% 70% 51%;
+    position: absolute;
+    animation: move-up6 2s ease-in infinite alternate-reverse;
+}
+
+.circle:nth-child(1) {
+    top: -15px;
+    left: -15px;
+}
+
+.circle:nth-child(2) {
+    bottom: -15px;
+    right: -15px;
+    animation-name: move-down1;
+}
+
+@keyframes move-up6 {
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes move-down1 {
+    to {
+        transform: translateY(10px);
+    }
+}
+
+.info-item {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.info-item i {
+    margin-right: 5px;
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        text-align: center; /* Alinha o texto ao centro */
+    }
+
+    .header-content {
+        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        gap: 10px; /* Espaçamento menor entre o texto e o cartão */
+    }
+
+    .info-card {
+        width: 100%; /* Faz o cartão ocupar a largura total disponível */
+        height: auto; /* Ajusta a altura automaticamente */
+        margin-top: 20px; /* Espaço acima do cartão */
+    }
+}
+
+
 
 /* Ajustes para telas menores */
 @media (max-width: 768px) {
@@ -855,7 +935,7 @@ header {
   }
   
   .selection-button.selected {
-    background-color: #092c08;
+    background-color: #277a01;
   }
   
   .flag-icon {
@@ -874,7 +954,7 @@ header {
   .info-card-inner {
     width: inherit;
     height: inherit;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(116, 116, 116, 0.05) !important;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
     border-radius: 8px;
@@ -893,7 +973,7 @@ header {
   .circle {
     width: 100px;
     height: 100px;
-    background: repeating-linear-gradient(48deg, #3023ae 0%, #ff0099 100%);
+    background: repeating-linear-gradient(48deg, #4aae23 0%, #33ff00 100%) !important;
     border-radius: 35% 30% 75% 30% / 49% 30% 70% 51%;
     position: absolute;
     animation: move-up6 2s ease-in infinite alternate-reverse;
