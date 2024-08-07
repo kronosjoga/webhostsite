@@ -57,6 +57,7 @@
         <link rel="icon" href="img/icon.png" type="image/png">
         <title>SuaHost - A hospedagem feita para você!</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="translation.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Acme&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,292 +65,303 @@
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">suahost</div>
-        <div class="nav-links" id="navLinks">
-            <div class="dropdown">
-                <button class="btn dropdown-btn">
-                    <i class="fas fa-cube"></i> Hospedagem Minecraft
-                </button>
-                <div class="dropdown-content">
-                    <a href="planos/">
-                        <i class="fas fa-cogs"></i> Hospedagem Simples
-                        <span class="dropdown-description">
-                            <i class="fas fa-info-circle"></i> Hospedagem simples para servidores pequenos
-                        </span>
-                    </a>
-                    <a href="planos/">
-                        <i class="fas fa-tools"></i> Hospedagem Avançada
-                        <span class="dropdown-description">
-                            <i class="fas fa-info-circle"></i> Hospedagem avançada para servidores de grande porte
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="btn dropdown-btn">
-                    <i class="fas fa-server"></i> Servidores Virtuais
-                </button>
-                <div class="dropdown-content">
-                    <a href="planos/">
-                        <i class="fas fa-cogs"></i> Hospedagem Simples
-                        <span class="dropdown-description">
-                            <i class="fas fa-info-circle"></i> Hospedagem simples para servidores pequenos
-                        </span>
-                    </a>
-                    <a href="planos/">
-                        <i class="fas fa-tools"></i> Hospedagem Avançada
-                        <span class="dropdown-description">
-                            <i class="fas fa-info-circle"></i> Hospedagem avançada para servidores de grande porte
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="btn dropdown-btn">
-                    <i class="fas fa-cogs"></i> Hospedagem cPanel
-                </button>
-                <div class="dropdown-content">
-                    <a href="planos/">
-                        <i class="fas fa-cogs"></i> Hospedagem Simples
-                        <span class="dropdown-description">
-                            <i class="fas fa-info-circle"></i> Hospedagem simples para servidores pequenos
-                        </span>
-                    </a>
-                    <a href="https://seusite.com.br/plano2">
-                        <i class="fas fa-tools"></i> Hospedagem Avançada
-                        <span class="dropdown-description">
-                            <i class="fas fa-info-circle"></i> Hospedagem avançada para servidores de grande porte
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <a href="#" class="nav-button">
-                <button class="btn-area-cliente">
-                    <i class="fas fa-user"></i> Área do Cliente
-                </button>
-            </a>
+  <nav class="navbar">
+    <div class="logo"><span data-translate="title-site">suahost</div></span>
+    <div class="nav-links" id="navLinks">
+        <div class="dropdown">
+            <button class="btn dropdown-btn">
+                <i class="fas fa-cube"></i> <span data-translate="hosting-title1">Hospedagem Minecraft</span>
+            </button>
+            <div class="dropdown-content">
+              <a href="planos/">
+                  <i class="fas fa-cogs"></i> <span data-translate="simple-hosting">Hospedagem Simples</span>
+                  <span class="dropdown-description" data-translate="simple-hosting-desc">
+                      <i class="fas fa-info-circle"></i> <span data-translate="simple-hosting-desc">Hospedagem simples para servidores pequenos</span>
+                  </span>
+              </a>
+              <a href="planos/">
+                  <i class="fas fa-tools"></i> <span data-translate="advanced-hosting">Hospedagem Avançada</span>
+                  <span class="dropdown-description" data-translate="advanced-hosting-desc">
+                      <i class="fas fa-info-circle"></i> <span data-translate="advanced-hosting-desc">Hospedagem avançada para servidores de grande porte</span>
+                  </span>
+              </a>
+          </div>
         </div>
-        <div class="hamburger" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="dropdown">
+          <button class="btn dropdown-btn">
+              <i class="fas fa-server"></i> <span data-translate="virtual-servers">Servidores Virtuais</span>
+          </button>
+          <div class="dropdown-content">
+              <a href="planos/">
+                  <i class="fas fa-cogs"></i> <span data-translate="simple-hosting">Hospedagem Simples</span>
+                  <span class="dropdown-description" data-translate="simple-hosting-desc">
+                      <i class="fas fa-info-circle"></i> <span data-translate="simple-hosting-desc">Hospedagem simples para servidores pequenos</span>
+                  </span>
+              </a>
+              <a href="planos/">
+                  <i class="fas fa-tools"></i> <span data-translate="advanced-hosting">Hospedagem Avançada</span>
+                  <span class="dropdown-description" data-translate="advanced-hosting-desc">
+                      <i class="fas fa-info-circle"></i> <span data-translate="advanced-hosting-desc">Hospedagem avançada para servidores de grande porte</span>
+                  </span>
+              </a>
+          </div>
+      </div>
+      
+        <div class="dropdown">
+            <button class="btn dropdown-btn">
+                <i class="fas fa-cogs"></i> <span data-translate="cpanel-hosting">Hospedagem cPanel</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="planos/">
+                    <i class="fas fa-cogs"></i> <span data-translate="simple-hosting">Hospedagem Simples</span>
+                    <span class="dropdown-description">
+                        <i class="fas fa-info-circle"></i> <span data-translate="simple-hosting-desc">Hospedagem simples para servidores pequenos</span>
+                    </span>
+                </a>
+                <a href="https://seusite.com.br/plano2">
+                    <i class="fas fa-tools"></i> <span data-translate="advanced-hosting">Hospedagem Avançada</span>
+                    <span class="dropdown-description">
+                        <i class="fas fa-info-circle"></i> <span data-translate="advanced-hosting-desc">Hospedagem avançada para servidores de grande porte</span>
+                    </span>
+                </a>
+            </div>
         </div>
-    </nav>
+        <a href="#" class="nav-button">
+            <button class="btn-area-cliente">
+                <i class="fas fa-user"></i> <span data-translate="client-area">Área do Cliente</span>
+            </button>
+        </a>
+    </div>
 
+<!-- Seletor de Idioma para Telas Grandes -->
+<div class="language-selector">
+  <button class="dropdown-toggle">
+      <span class="flag-icon flag-icon-br"></span>
+  </button>
+  <div class="dropdown-menu">
+      <button class="dropdown-item" data-lang="pt" data-flag="br" data-label="">
+          <span class="flag-icon flag-icon-br"></span> PT
+      </button>
+      <button class="dropdown-item" data-lang="en" data-flag="us" data-label="">
+          <span class="flag-icon flag-icon-us"></span> EN
+      </button>
+  </div>
+</div>
+    <!-- Botão Hamburger -->
+    <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Menu Hamburger -->
+    <div class="hamburger-menu" id="hamburger-menu">
+        <div class="language-selector-hamburger">
+            <button class="dropdown-toggle">
+                <span class="flag-icon flag-icon-br"></span> PT
+            </button>
+            <div class="dropdown-menu">
+                <button class="dropdown-item" data-lang="pt">
+                    <span class="flag-icon flag-icon-br"></span> PT
+                </button>
+                <button class="dropdown-item" data-lang="en">
+                    <span class="flag-icon flag-icon-us"></span> EN
+                </button>
+            </div>
+        </div>
+        <!-- Adicione outros links ou informações aqui se necessário -->
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
     <!-- Novo conteúdo do header -->
     <div class="header-container">
         <div class="header-text">
-            <h1>
-                A MELHOR HOSPEDAGEM
-                DO <span class="highlight">BRASIL</span>
-            </h1>
+          <h1 data-translate="header-title">A MELHOR HOSPEDAGEM DO <span class="highlight">BRASIL</span></h1>
             <br>
-            <h2 class="btn-shine">
-                <a>Convide seus amigos para aventuras inesquecíveis.<br>
-                Junte-se a nós e deixe a busca pela melhor experiência de Minecraft terminar aqui!</a>
-            </h2>                      
+            <h2 class="btn-shine" data-translate="header-subtitle">Convide seus amigos para aventuras inesquecíveis.<br>
+              Junte-se a nós e deixe a busca pela melhor experiência de Minecraft terminar aqui!</h2>                      
         </div>
         <div class="header-image">
             <img src="img/steve.gif">
         </div>
     </div>
     <!-- Título acima dos cartões -->
-    <div class="section-title">Confira Nossos Melhores Planos Abaixo</div>
+    <div class="section-title" data-translate="section-title">Confira Nossos Melhores Planos Abaixo</div>
 
     <div class="cards-container">
-        <div class="cards__inner">
+      <div class="cards__inner">
           <div class="cards__card card">
-            <img src="img/basico.png" alt="Icon 1" class="card__icon">
-            <p class="card__heading">Plano Básico</p>
-            <p class="card__price">00,00$/Mensal</p>
-            <ul class="card__bullets flow" role="list">
-              <li>Descrição 1</li>
-              <li>Descrição 2</li>
-              <li>Descrição 3</li>
-              <li>Descrição 4</li>
-            </ul>
-            <a class="card__cta cta" href="#basic">
-              <img src="img/coin.gif" alt="Moeda" class="cta-icon"> Adquirir Plano
-          </a>          
+              <img src="img/basico.png" alt="Icon 1" class="card__icon">
+              <p class="card__heading" data-translate="basic-plan-heading">Plano Básico</p>
+              <p class="card__price" data-translate="basic-plan-price">00,00$/Mensal</p>
+              <ul class="card__bullets flow" role="list">
+                  <li data-translate="basic-plan-description-1">Descrição 1</li>
+                  <li data-translate="basic-plan-description-2">Descrição 2</li>
+                  <li data-translate="basic-plan-description-3">Descrição 3</li>
+                  <li data-translate="basic-plan-description-4">Descrição 4</li>
+              </ul>
+              <a class="card__cta cta" href="#basic" data-translate="basic-plan-cta">
+                  <span class="cta-text">Adquirir Plano</span>
+                  <img src="img/coin.gif" alt="Moeda" class="cta-icon"> 
+              </a>          
           </div>
           <div class="cards__card card">
-            <img src="img/medio.png" alt="Icon 2" class="card__icon">
-            <p class="card__heading">Plano Médio</p>
-            <p class="card__price">00,00$/Mensal</p>
-            <ul class="card__bullets flow" role="list">
-                <li>Descrição 1</li>
-                <li>Descrição 2</li>
-                <li>Descrição 3</li>
-                <li>Descrição 4</li>
-            </ul>
-            <a class="card__cta cta" href="#basic">
-              <img src="img/coin.gif" alt="Moeda" class="cta-icon"> Adquirir Plano
-          </a>          
+              <img src="img/medio.png" alt="Icon 2" class="card__icon">
+              <p class="card__heading" data-translate="medium-plan-heading">Plano Médio</p>
+              <p class="card__price" data-translate="medium-plan-price">00,00$/Mensal</p>
+              <ul class="card__bullets flow" role="list">
+                  <li data-translate="medium-plan-description-1">Descrição 1</li>
+                  <li data-translate="medium-plan-description-2">Descrição 2</li>
+                  <li data-translate="medium-plan-description-3">Descrição 3</li>
+                  <li data-translate="medium-plan-description-4">Descrição 4</li>
+              </ul>
+              <a class="card__cta cta" href="#medium" data-translate="medium-plan-cta">
+                  <span class="cta-text">Adquirir Plano</span>
+                  <img src="img/coin.gif" alt="Moeda" class="cta-icon"> 
+              </a>          
           </div>
           <div class="cards__card card">
-            <img src="img/avançado.png" alt="Icon 3" class="card__icon">
-            <p class="card__heading">Plano Avançado</p>
-            <p class="card__price">00,00$/Mensal</p>
-            <ul class="card__bullets flow" role="list">
-                <li>Descrição 1</li>
-                <li>Descrição 2</li>
-                <li>Descrição 3</li>
-                <li>Descrição 4</li>
-            </ul>
-            <a class="card__cta cta" href="#basic">
-              <img src="img/coin.gif" alt="Moeda" class="cta-icon"> Adquirir Plano
-          </a>          
+              <img src="img/avançado.png" alt="Icon 3" class="card__icon">
+              <p class="card__heading" data-translate="advanced-plan-heading">Plano Avançado</p>
+              <p class="card__price" data-translate="advanced-plan-price">00,00$/Mensal</p>
+              <ul class="card__bullets flow" role="list">
+                  <li data-translate="advanced-plan-description-1">Descrição 1</li>
+                  <li data-translate="advanced-plan-description-2">Descrição 2</li>
+                  <li data-translate="advanced-plan-description-3">Descrição 3</li>
+                  <li data-translate="advanced-plan-description-4">Descrição 4</li>
+              </ul>
+              <a class="card__cta cta" href="#advanced" data-translate="advanced-plan-cta">
+                  <span class="cta-text">Adquirir Plano</span>
+                  <img src="img/coin.gif" alt="Moeda" class="cta-icon"> 
+              </a>          
           </div>
           <div class="cards__card card">
-            <img src="img/creeper.png" alt="Icon 4" class="card__icon">
-            <p class="card__heading">Plano Creeper</p>
-            <p class="card__price">00,00$/Mensal</p>
-            <ul class="card__bullets flow" role="list">
-                <li>Descrição 1</li>
-                <li>Descrição 2</li>
-                <li>Descrição 3</li>
-                <li>Descrição 4</li>
-            </ul>
-            <a class="card__cta cta" href="#basic">
-              <img src="img/coin.gif" alt="Moeda" class="cta-icon"> Adquirir Plano
-          </a>          
+              <img src="img/creeper.png" alt="Icon 4" class="card__icon">
+              <p class="card__heading" data-translate="creeper-plan-heading">Plano Creeper</p>
+              <p class="card__price" data-translate="creeper-plan-price">00,00$/Mensal</p>
+              <ul class="card__bullets flow" role="list">
+                  <li data-translate="creeper-plan-description-1">Descrição 1</li>
+                  <li data-translate="creeper-plan-description-2">Descrição 2</li>
+                  <li data-translate="creeper-plan-description-3">Descrição 3</li>
+                  <li data-translate="creeper-plan-description-4">Descrição 4</li>
+              </ul>
+              <a class="card__cta cta" href="#creeper" data-translate="creeper-plan-cta">
+                  <span class="cta-text">Adquirir Plano</span>
+                  <img src="img/coin.gif" alt="Moeda" class="cta-icon"> 
+              </a>          
           </div>
-        </div>
       </div>
+  </div>
+  
        <br>
        <br>
        <br>
        <br>
 <!-- Novo container de contato -->
 <div class="contact-container">
-    <div class="contact-content">
-        <h2>Entre em contato conosco via <span class="discord-highlight">Discord</span>!</h2>
-        <a href="https://discord.com/invite/seulinkdiscord" class="contact-btn" target="_blank">Acessar Discord</a>
-    </div>
+  <div class="contact-content">
+      <h2 data-translate="contact-header">Entre em contato conosco via <span class="discord-highlight">Discord</span>!</h2>
+      <a href="https://discord.com/invite/seulinkdiscord" class="contact-btn" target="_blank" data-translate="contact-btn">Acessar Discord</a>
+  </div>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+  
+      dropdownBtns.forEach(btn => {
+          btn.addEventListener('click', function(event) {
+              event.stopPropagation(); // Impede a propagação do clique para o document
+              const dropdownContent = this.nextElementSibling;
+              
+              // Alterna a visibilidade do dropdown clicado
+              dropdownContent.classList.toggle('show');
+              
+              // Fecha todos os outros dropdowns
+              document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                  if (dropdown !== dropdownContent) {
+                      dropdown.classList.remove('show');
+                  }
+              });
+          });
+      });
+  
+      document.addEventListener('click', function(event) {
+          // Fecha todos os dropdowns se o clique não for no botão de dropdown
+          if (!event.target.matches('.dropdown-btn') && !event.target.closest('.dropdown-content')) {
+              document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                  dropdown.classList.remove('show');
+              });
+          }
+      });
+  });
+  </script>  
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('navLinks');
-
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('show');
-            });
-
-            // Adiciona a funcionalidade de dropdown ao clicar
-            const dropdownBtns = document.querySelectorAll('.dropdown-btn');
-            dropdownBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const dropdownContent = this.nextElementSibling;
-                    dropdownContent.classList.toggle('show');
-                    // Fecha os outros dropdowns
-                    document.querySelectorAll('.dropdown-content').forEach(dropdown => {
-                        if (dropdown !== dropdownContent) {
-                            dropdown.classList.remove('show');
-                        }
-                    });
-                });
-            });
-
-            // Fecha o dropdown se clicar fora dele
-            document.addEventListener('click', function(event) {
-                if (!event.target.matches('.dropdown-btn')) {
-                    document.querySelectorAll('.dropdown-content').forEach(dropdown => {
-                        dropdown.classList.remove('show');
-                    });
-                }
-            });
-        });
-    </script>
-    <script>
-        document.querySelector('.header-image').addEventListener('mousemove', (e) => {
-            const image = document.querySelector('.header-image img');
-            const { offsetWidth: width, offsetHeight: height } = image;
-            const { left, top } = image.getBoundingClientRect();
-            const x = e.clientX - left;
-            const y = e.clientY - top;
-            
-            // Calcula o ângulo de rotação em torno dos eixos X e Y
-            const rotateX = ((y / height) - 0.5) * 30; // 30 graus é o máximo de rotação
-            const rotateY = ((x / width) - 0.5) * -30; // 30 graus é o máximo de rotação, negativo para inverter o movimento
-        
-            // Aplica a transformação 3D à imagem
-            image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
-        
-        document.querySelector('.header-image').addEventListener('mouseleave', () => {
-            const image = document.querySelector('.header-image img');
-            image.style.transform = 'rotateX(0deg) rotateY(0deg)';
-        });
-        </script>
         <br>
         <br>
         <br>
         <br>
-        <!-- Footer -->
-        <footer class="pt-20 pb-8 bg-black">
-            <div class="container mx-auto px-4 2xl:px-0 max-w-7xl">
-              <div class="flex flex-col lg:flex-row justify-center lg:justify-between items-center">
-                <div class="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-3 lg:w-[600px]">
-                  <p class="text-[12px] lg:text-[14px] text-center lg:text-start font-light text-gray-200">Oferecemos soluções de Servidor Dedicado de qualidade e alto desempenho em que você pode confiar, combinadas com o suporte que todos os clientes precisam e merecem.</p>
-                  <p></p>
-    
-
-                  
-                  
-                    
-                  </ul>
-                </div>
-                <div class="flex gap-16 mt-2">
-                  <ul class="flex flex-col gap-3">
-                    <li class="text-white font-semibold">Serviços</li>
-                    <li>
-                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Hospedagem Minecraft" href="/minecraft/us">Hospedagem Minecraft</a>
-                    </li>
-                    <li>
-                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Hospedagem para Bots" href="/bots">Hospedagem para Bots</a>
-                    </li>
-                    <li>
-                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Servidor VPS" href="/vps">Servidor VPS</a>
-                    </li>
-                    <li>
-                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Servidores Dedicados" href="/servidores-dedicado">Servidores Dedicados</a>
-                    </li>
-                  </ul>
-                  <ul class="flex flex-col gap-3">
-                    <li class="text-white font-semibold">Suporte</li>
-                    <li>
-                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Entrar em contato" target="_blank" href="https://seusite.com.br/">Entrar em contato</a>
-                    </li>
-                    <li>
-                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Área do Cliente" href="https://seusite.com.br/">Área do Cliente</a>
-                    </li>
-                    <li>
-                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Abrir um ticket" href="https://seusite.com.br/">Abrir um ticket</a>
-                    </li>
-                    <li>
-                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Status" href="https://seusite.com.br/">Status</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="bg-[#171B2E] h-[2px] w-full my-5">
-              </div>
-              <div class="flex justify-between items-center">
-                <p class="text-[12px] lg:text-[14px] text-white">© <!-- -->2024<!-- --> - Sua Host. Todos os direitos reservados. Feito por KronosJoga   <i class="fa-solid fa-heart fa-beat" style="color: #ff0000;"></i></p>
-                <ul class="flex items-center gap-3">
+     <!-- Footer -->
+<footer class="pt-20 pb-8 bg-black">
+  <div class="container mx-auto px-4 2xl:px-0 max-w-7xl">
+      <div class="flex flex-col lg:flex-row justify-center lg:justify-between items-center">
+          <div class="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-3 lg:w-[600px]">
+              <p class="text-[12px] lg:text-[14px] text-center lg:text-start font-light text-gray-200" data-translate="footer-description">
+                  Oferecemos soluções de Servidor Dedicado de qualidade e alto desempenho em que você pode confiar, combinadas com o suporte que todos os clientes precisam e merecem.
+              </p>
+              <p></p>
+          </div>
+          <div class="flex gap-16 mt-2">
+              <ul class="flex flex-col gap-3">
+                  <li class="text-white font-semibold" data-translate="footer-services">Serviços</li>
                   <li>
-                    <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Termos de Serviço" href="/termos">Termos de Serviço</a>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Hospedagem Minecraft" href="/minecraft/us" data-translate="footer-minecraft-hosting">Hospedagem Minecraft</a>
                   </li>
-                </ul>
-              </div>
-            </div>
-          </footer>
-
+                  <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Hospedagem para Bots" href="/bots" data-translate="footer-bots-hosting">Hospedagem para Bots</a>
+                  </li>
+                  <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Servidor VPS" href="/vps" data-translate="footer-vps-hosting">Servidor VPS</a>
+                  </li>
+                  <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Servidores Dedicados" href="/servidores-dedicado" data-translate="footer-dedicated-servers">Servidores Dedicados</a>
+                  </li>
+              </ul>
+              <ul class="flex flex-col gap-3">
+                  <li class="text-white font-semibold" data-translate="footer-support">Suporte</li>
+                  <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Entrar em contato" target="_blank" href="https://seusite.com.br/" data-translate="footer-contact">Entrar em contato</a>
+                  </li>
+                  <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Área do Cliente" href="https://seusite.com.br/" data-translate="footer-client-area">Área do Cliente</a>
+                  </li>
+                  <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Abrir um ticket" href="https://seusite.com.br/" data-translate="footer-open-ticket">Abrir um ticket</a>
+                  </li>
+                  <li>
+                      <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Status" href="https://seusite.com.br/" data-translate="footer-status">Status</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="bg-[#171B2E] h-[2px] w-full my-5"></div>
+      <div class="flex justify-between items-center">
+          <p class="text-[12px] lg:text-[14px] text-white" data-translate="footer-copyright">
+              © <!-- -->2024<!-- --> - Sua Host. Todos os direitos reservados. Feito por KronosJoga   <i class="fa-solid fa-heart fa-beat" style="color: #ff0000;"></i>
+          </p>
+          <ul class="flex items-center gap-3">
+              <li>
+                  <a class="text-[12px] lg:text-[14px] text-white hover:underline" aria-label="Termos de Serviço" href="/termos" data-translate="footer-terms-of-service">Termos de Serviço</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</footer>
 </body>
 </html>

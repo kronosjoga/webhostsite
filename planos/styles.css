@@ -231,6 +231,109 @@ body {
     border-radius: 4px; /* Reduzido o border-radius das linhas */
 }
 
+/* Estilos do menu hamburger */
+.hamburger-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #000;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.hamburger-menu .dropdown-toggle,
+.hamburger-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.hamburger-menu .dropdown-toggle:hover,
+.hamburger-menu .dropdown-item:hover {
+    background-color: #333;
+    border-radius: 4px;
+}
+
+/* Mostrar o menu hamburger quando o botão é clicado */
+.hamburger.active + .hamburger-menu {
+    display: block;
+}
+
+.language-selector {
+    position: relative; /* Ajustado para garantir que o dropdown fique dentro do container */
+}
+/* Ajuste para telas maiores */
+@media (min-width: 1024px) {
+    .language-selector {
+        transform: translateX(-50px); /* Move o seletor 50px para a esquerda */
+    }
+}
+
+.language-selector .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.language-selector .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Posiciona o dropdown logo abaixo do botão */
+    right: 0; /* Alinha o dropdown com o lado direito do botão */
+    background-color: #000;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0; /* Começa oculto */
+    transition: opacity 0.3s ease, max-height 0.3s ease; /* Transição para suavizar a exibição */
+    max-height: 0; /* Começa com altura zero */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa a altura */
+}
+/* Ajuste para telas maiores */
+@media (min-width: 1024px) {
+    .language-selector .dropdown-menu {
+        right: 50%; /* Ajusta o dropdown para a esquerda */
+        transform: translateX(50%); /* Move o dropdown para a esquerda em relação ao botão */
+    }
+}
+.language-selector .dropdown-menu.show {
+    display: block; /* Torna o dropdown visível */
+    opacity: 1; /* Torna visível */
+    max-height: 300px; /* Altura máxima quando visível */
+}
+
+.language-selector .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.language-selector .dropdown-item:hover {
+    background-color: #333;
+    border-radius: 4px;
+}
+
 /* Estilos para o submenu */
 .navbar .nav-links.show {
     display: flex;
